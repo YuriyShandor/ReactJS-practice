@@ -6,6 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Contact List</title>
 
+  <link rel="stylesheet" href="css/style.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.min.js"></script>
@@ -48,7 +50,7 @@
       },
       {
         id: 6,
-        name: 'Ana	Bailey',
+        name: 'Anna	Bailey',
         phoneNumber: '+16318403631',
         photo: 'img/woman(2).png'
       },
@@ -93,12 +95,28 @@
     });
 
     var ContactsList = React.createClass({
+      getInitialState: function() {
+        return {
+          displayedContacts: contacts
+        };
+      },
+      contactSearch: function(e) {
+        var searchQuery = e.target.value.toLowerCase();
+        var displayedContacts = contacts.filter(function(el) {
+          var searchVal = el.name.toLowerCase();
+          return searchVal.indexOf(searchQuery) !== -1;
+        });
+        this.setState({
+          displayedContacts: displayedContacts
+        })
+      },
       render: function() {
         return (
-          <div>
+          <div  className="contacts-block">
+            <input type="text" className="contacts-search__input" placeholder="Enter contact for search..." onChange={this.contactSearch}/>
             <div className="contacts-list">
               {
-                contacts.map(function(el) {
+                this.state.displayedContacts.map(function(el) {
                   return <Contact
                     key={el.id}
                     name={el.name}
