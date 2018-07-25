@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Simple Timer</title>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.0/react-dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.6.15/browser.min.js"></script>
+</head>
+<body>
+
+  <div id="content"></div>
+
+  <script type="text/babel">
+    var Timer = React.createClass({
+      getInitialState: function () {
+        return {
+          seconds: 0
+        };
+      },
+
+      tick: function () {
+        this.setState({seconds: this.state.seconds + 1});
+      },
+
+      componentDidMount: function () {
+        this.timer = setInterval(this.tick, 1000)
+      },
+
+      componentWillUnmount: function () {
+        clearInterval(this.timer)
+      },
+
+      render: function() {
+        var textValSecond = 'секунд';
+        var textValPast = 'минуло';
+        if (this.state.seconds == 1 || this.state.seconds % 10 == 1 && this.state.seconds != 11 && this.state.seconds % 100 != 11) {
+          textValSecond = 'секунда';
+          textValPast = 'минула';
+        } else if (this.state.seconds % 10 == 2 && this.state.seconds != 12 && this.state.seconds % 100 != 12
+          || this.state.seconds % 10 == 3 && this.state.seconds != 13 && this.state.seconds % 100 != 13
+          || this.state.seconds % 10 == 4 && this.state.seconds != 14 && this.state.seconds % 100 != 14) {
+          textValSecond = 'секунди';
+        };
+        return (
+          <h1>Від початку завантаження сторінки {textValPast} {this.state.seconds} {textValSecond}</h1>
+        );
+      }
+    });
+
+    ReactDOM.render(
+      <Timer/>,
+      document.getElementById('content')
+    );
+  </script>
+
+</body>
+</html>
