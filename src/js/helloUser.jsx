@@ -8,9 +8,9 @@ class HelloUser extends React.Component {
       username: 'John'
     }
 
-    this.handleChange = this.handleChange.bind(this)
+    this.enterName = this.enterName.bind(this)
   }
-  handleChange (e) {
+  enterName (e) {
     this.setState({
       username: e.target.value
     })
@@ -23,7 +23,7 @@ class HelloUser extends React.Component {
             <div className="hello-user__item">Hello {this.state.username}!</div>
             <div className="hello-user__enter-name">
               <span>Enter other name:</span>
-              <input type="text" value={this.state.username} onChange={this.handleChange}/>
+              <input type="text" value={this.state.username} onChange={this.enterName}/>
             </div>
           </div>
         </div>
