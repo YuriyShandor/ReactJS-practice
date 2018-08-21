@@ -1,8 +1,8 @@
 import './scss/base.scss';
 
-let name = 'World';
+// import React from "react";
+// import ReactDOM from "react-dom";
 
-console.log(`Hello ${name} !`);
 
-
+import HelloWorld from "./js/helloWorld.js";
 import App from "./js/app";
