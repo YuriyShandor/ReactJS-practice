@@ -1,0 +1,196 @@
+@import "./_components/_variables.scss";
+@import "./_components/_reset.scss";
+@import "./_components/_buttons.scss";
+
+@import "./_components/_helloWorld.scss";
+@import "./_components/_helloUser.scss";
+
+body {
+  font-family: Helvetica, Arial sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 1170px;
+  margin: 0 auto;
+  position: relative;
+}
+
+@media only screen and (max-width : 1199px) {
+  .container {
+    width: 90vw;
+  }
+}
+
+.banner {
+  height: 100vh;
+  padding: 15px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  h1 {
+    font-size: 54px;
+    font-weight: 700;
+    color: #e0e0e0;
+    text-align: center;
+    line-height: 1.4;
+    z-index: 2;
+  }
+}
+
+@media only screen and (max-width : 1199px) {
+  .banner {
+    h1 {
+      font-size: 50px;
+    }
+  }
+}
+
+@media only screen and (max-width : 991px) {
+  .banner {
+    h1 {
+      font-size: 42px;
+    }
+  }
+}
+
+@media only screen and (max-width : 767px) {
+  .banner {
+    h1 {
+      font-size: 34px;
+    }
+  }
+}
+
+// React Content
+
+#content {
+  width: 100%;
+}
+
+.content-wrapper {
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  width: 100%;
+  padding: 100px 0;
+
+  &:nth-child(even) {
+    background: #e0e0e0;
+  }
+
+  &:nth-child(odd) {
+    background: #fafafa;
+  }
+}
+
+@media only screen and (max-width : 1199px) {
+  section {
+    padding: 90px 0;
+  }
+}
+
+@media only screen and (max-width : 991px) {
+  section {
+    padding: 75px 0;
+  }
+}
+
+@media only screen and (max-width : 767px) {
+  section {
+    padding: 50px 0;
+  }
+}
+
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 520px) {
+
+}
+
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 520px) {
+
+}
+
+
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 520px) {
+
+}
+
+
+@media only screen and (max-width : 1199px) {
+
+}
+
+@media only screen and (max-width : 991px) {
+
+}
+
+@media only screen and (max-width : 767px) {
+
+}
+
+@media only screen and (max-width : 520px) {
+
+}
