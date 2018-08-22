@@ -23,7 +23,7 @@ class HelloUser extends React.Component {
             <div className="hello-user__item">Hello {this.state.username}!</div>
             <div className="hello-user__enter-name">
               <span>Enter other name:</span>
-              <input type="text" value={this.state.username} onChange={this.enterName}/>
+              <input type="text" onChange={this.enterName}/>
             </div>
           </div>
         </div>

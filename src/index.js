@@ -6,6 +6,7 @@ import ReactDOM from "react-dom";
 import HelloWorld from "./js/helloWorld.jsx";
 import HelloUser from "./js/helloUser.jsx";
 import ContactsList from "./js/contactList.jsx";
+import Timer from "./js/timer.jsx";
 
 class App extends React.Component {
   render() {
@@ -14,6 +15,7 @@ class App extends React.Component {
         <HelloWorld />
         <HelloUser />
         <ContactsList />
+        <Timer />
       </div>
     )
   }
